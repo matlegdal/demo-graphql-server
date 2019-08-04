@@ -8,11 +8,12 @@ services:
     environment:
       PRISMA_CONFIG: |
         port: 4466
+        managementApiSecret: mysecret42
         databases:
           default:
             connector: mongo
-            uri: mongodb://prisma:prisma@mongo
-  mongo:
+            uri: mongodb://prisma:prisma@mongo-db
+  mongo-db:
     image: mongo:3.6
     restart: always
     environment:
